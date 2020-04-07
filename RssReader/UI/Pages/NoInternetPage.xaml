@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage x:Class="RssReader.UI.Pages.NoInternetPage"
+                 xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 BackgroundColor="Transparent"
+                 BackgroundInputTransparent="True"
+                 CloseWhenBackgroundIsClicked="False"
+                 HasKeyboardOffset="False">
+    <Grid Margin="16,0,13,57"
+          HorizontalOptions="CenterAndExpand"
+          VerticalOptions="End">
+        <BoxView Margin="3,3,0,0"
+                 BackgroundColor="Black" />
+
+        <Frame Margin="0,0,3,3"
+               BackgroundColor="{StaticResource grey}">
+            <StackLayout Padding="10,5"
+                         HorizontalOptions="CenterAndExpand"
+                         Orientation="Horizontal">
+
+                <Label Style="{StaticResource NoDataLabel}"
+                       FontSize="14"
+                       Text="Отсутствует соединение с интернетом"
+                       TextColor="White"
+                       VerticalTextAlignment="Center" />
+            </StackLayout>
+        </Frame>
+    </Grid>
+</pages:PopupPage>

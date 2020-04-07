@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePage x:Class="RssReader.UI.Pages.RssDetailPage"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:customLayout="clr-namespace:RssReader.UI.CustomLayout"
+                xmlns:pages="clr-namespace:RssReader.UI.Pages"
+                xmlns:statecontainer="clr-namespace:RssReader.UI.CustomLayout.StateContainer">
+    <StackLayout BackgroundColor="#252525"
+                 Spacing="0"
+                 VerticalOptions="FillAndExpand">
+        <customLayout:NavigationBarGrid>
+            <Frame Grid.Column="0">
+                <Image Margin="0,0,2,0"
+                       HeightRequest="20"
+                       HorizontalOptions="Start"
+                       Source="arrow_back"
+                       VerticalOptions="Center"
+                       WidthRequest="20" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Label Style="{StaticResource NavigationTitle}"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding ChannelTitle}"
+                   VerticalTextAlignment="Center" />
+
+            <Frame Grid.Column="2">
+                <Image Margin="0,0,2,0"
+                       HeightRequest="20"
+                       HorizontalOptions="End"
+                       Source="dots"
+                       VerticalOptions="Center"
+                       WidthRequest="20" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OperationCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </customLayout:NavigationBarGrid>
+
+        <statecontainer:StateContainer HorizontalOptions="FillAndExpand"
+                                       State="{Binding State}"
+                                       VerticalOptions="FillAndExpand">
+            <statecontainer:StateCondition State="NoData">
+                <StackLayout Margin="0,23,0,0"
+                             VerticalOptions="FillAndExpand">
+                    <Label Style="{StaticResource NoDataLabel}"
+                           HorizontalOptions="Center"
+                           Text="Канал пуст"
+                           TextColor="#979797" />
+                </StackLayout>
+            </statecontainer:StateCondition>
+
+            <statecontainer:StateCondition State="Normal">
+                <ListView IsPullToRefreshEnabled="True"
+                          IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
+                          ItemsSource="{Binding RssItems}"
+                          RefreshCommand="{Binding RefreshCommand}"
+                          RefreshControlColor="Black"
+                          SelectedItem="{Binding ItemSelected, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <customLayout:TransparentViewCell>
+                                <StackLayout Padding="16,10,16,0"
+                                             BackgroundColor="#252525"
+                                             HorizontalOptions="FillAndExpand"
+                                             Spacing="10">
+                                    <Grid ColumnSpacing="12"
+                                          HorizontalOptions="FillAndExpand"
+                                          VerticalOptions="StartAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Image HeightRequest="23"
+                                               Source="rss"
+                                               VerticalOptions="FillAndExpand"
+                                               WidthRequest="23" />
+
+                                        <Label Grid.Column="1"
+                                               FontFamily="{StaticResource Medium}"
+                                               Text="{Binding Title}"
+                                               TextColor="White"
+                                               VerticalTextAlignment="Start" />
+
+                                        <Image Grid.RowSpan="2"
+                                               Grid.Column="2"
+                                               HeightRequest="12"
+                                               Rotation="180"
+                                               Source="arrow_back"
+                                               VerticalOptions="CenterAndExpand"
+                                               WidthRequest="12" />
+
+                                        <Label Grid.Row="1"
+                                               Grid.ColumnSpan="2"
+                                               FontFamily="{StaticResource Regular}"
+                                               Text="{Binding Description}"
+                                               TextColor="White"
+                                               VerticalTextAlignment="Center" />
+                                    </Grid>
+
+                                    <BoxView Style="{StaticResource SeparatorLine}" />
+                                </StackLayout>
+                            </customLayout:TransparentViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </statecontainer:StateCondition>
+
+            <statecontainer:StateCondition State="Loading">
+                <statecontainer:LoadingState />
+            </statecontainer:StateCondition>
+        </statecontainer:StateContainer>
+    </StackLayout>
+</pages:BasePage>

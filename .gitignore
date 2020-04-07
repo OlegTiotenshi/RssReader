@@ -1,0 +1,8 @@
+.vs
+.mfractor
+.DS_Store
+bin
+obj
+
+packages/
+Resource.designer.cs

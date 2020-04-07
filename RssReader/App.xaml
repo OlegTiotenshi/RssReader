@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application x:Class="RssReader.App"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--  Fonts  -->
+            <OnPlatform x:Key="Bold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Montserrat-Bold.ttf#Montserrat" />
+                <On Platform="iOS"
+                    Value="Montserrat-Bold" />
+            </OnPlatform>
+            <OnPlatform x:Key="SemiBold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Montserrat-SemiBold.ttf#Montserrat" />
+                <On Platform="iOS"
+                    Value="Montserrat-SemiBold" />
+            </OnPlatform>
+            <OnPlatform x:Key="Regular"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Montserrat-Regular.ttf#Montserrat" />
+                <On Platform="iOS"
+                    Value="Montserrat-Regular" />
+            </OnPlatform>
+            <OnPlatform x:Key="Medium"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Montserrat-Medium.ttf#Montserrat" />
+                <On Platform="iOS"
+                    Value="Montserrat-Medium" />
+            </OnPlatform>
+
+            <!--  Color  -->
+            <Color x:Key="black">#252525</Color>
+            <Color x:Key="brownGrey">#979797</Color>
+            <Color x:Key="greyishBrown">#3e3e3e</Color>
+            <Color x:Key="orangeyYellow">#ffbc21</Color>
+            <Color x:Key="tomato">#e84747</Color>
+            <Color x:Key="grey">#333333</Color>
+            <Color x:Key="white">#ffffff</Color>
+
+            <!--  Base Styles  -->
+            <Style TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="IsClippedToBounds" Value="true" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
+            <Style TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HasUnevenRows" Value="True" />
+                <Setter Property="SeparatorVisibility" Value="None" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalScrollBarVisibility" Value="Never" />
+            </Style>
+            <Style TargetType="Button">
+                <!--<Setter Property="Padding" Value="13,15" />-->
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="CornerRadius" Value="22" />
+                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="{StaticResource SemiBold}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource orangeyYellow}" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="Margin" Value="22,0" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontFamily" Value="{StaticResource Medium}" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="ReturnType" Value="Done" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource brownGrey}" />
+            </Style>
+
+            <!--  Styles  -->
+            <Style x:Key="SeparatorLine"
+                   TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource white}" />
+                <Setter Property="HeightRequest" Value=".5" />
+                <Setter Property="Opacity" Value=".2" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="NavigationTitle"
+                   TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource white}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="{StaticResource SemiBold}" />
+            </Style>
+            <Style x:Key="NoDataLabel"
+                   TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource white}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="{StaticResource Medium}" />
+            </Style>
+
+            <Style x:Key="BorderFrame"
+                   TargetType="Frame">
+                <Setter Property="HeightRequest" Value="49" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="MinimumHeightRequest" Value="49" />
+                <Setter Property="CornerRadius" Value="22" />
+                <Setter Property="BorderColor" Value="{StaticResource brownGrey}" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

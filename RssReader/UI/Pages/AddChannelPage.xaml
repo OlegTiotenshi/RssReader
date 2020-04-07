@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage x:Class="RssReader.UI.Pages.AddChannelPage"
+                 xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 BackgroundColor="Transparent"
+                 CloseWhenBackgroundIsClicked="False">
+    <Frame Margin="16,0"
+           Padding="20,30,20,30"
+           BackgroundColor="Black"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="Center">
+        <StackLayout Spacing="30">
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="titleLabel"
+                       FontFamily="{StaticResource Medium}"
+                       FontSize="17"
+                       HorizontalOptions="FillAndExpand"
+                       TextColor="White" />
+                <Image Margin="0,0,5,0"
+                       HeightRequest="20"
+                       Source="cancel"
+                       WidthRequest="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CloseCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <StackLayout>
+                <Label FontFamily="{StaticResource Regular}"
+                       Text="Название"
+                       TextColor="White" />
+                <Frame Style="{StaticResource BorderFrame}">
+                    <Entry BackgroundColor="White"
+                           Keyboard="Default"
+                           Placeholder="Введите название канала"
+                           Text="{Binding Channel.Title}" />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout>
+                <Label FontFamily="{StaticResource Regular}"
+                       Text="Ссылка на канал"
+                       TextColor="White" />
+                <Frame Style="{StaticResource BorderFrame}">
+                    <Entry BackgroundColor="White"
+                           Keyboard="Default"
+                           Placeholder="Введите url"
+                           Text="{Binding Channel.Uri}" />
+                </Frame>
+            </StackLayout>
+
+            <Button Command="{Binding SaveCommand}"
+                    Text="Сохранить" />
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>
