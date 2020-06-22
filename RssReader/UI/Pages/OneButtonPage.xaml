@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePage x:Class="RssReader.UI.Pages.OneButtonPage"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:pages="clr-namespace:RssReader.UI.Pages">
+    <StackLayout BackgroundColor="#252525"
+                 Spacing="0"
+                 VerticalOptions="FillAndExpand">
+        <Button Margin="16,0"
+                Command="{Binding GoToMapsPageCommand}"
+                HorizontalOptions="FillAndExpand"
+                Text="Go to Maps Page"
+                VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</pages:BasePage>

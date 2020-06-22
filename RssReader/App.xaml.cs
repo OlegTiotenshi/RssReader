@@ -1,4 +1,5 @@
-﻿using RssReader.Services;
+﻿using RssReader.DAL.DataServices;
+using RssReader.Services;
 using RssReader.UI;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -13,9 +14,11 @@ namespace RssReader
 
             DialogService.Init(this);
 
+            DataServices.Init();
+
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
             
-            NavigationService.Init(Pages.RssList);
+            NavigationService.Init(Pages.OneButton);
         }
         public App(string databaseLocation) : this()
         {

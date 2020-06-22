@@ -21,9 +21,9 @@
                 </Frame.GestureRecognizers>
             </Frame>
 
-            <Label Style="{StaticResource NavigationTitle}"
-                   Grid.Column="1"
+            <Label Grid.Column="1"
                    HorizontalTextAlignment="Center"
+                   Style="{StaticResource NavigationTitle}"
                    Text="{Binding ChannelTitle}"
                    VerticalTextAlignment="Center" />
 
@@ -46,8 +46,8 @@
             <statecontainer:StateCondition State="NoData">
                 <StackLayout Margin="0,23,0,0"
                              VerticalOptions="FillAndExpand">
-                    <Label Style="{StaticResource NoDataLabel}"
-                           HorizontalOptions="Center"
+                    <Label HorizontalOptions="Center"
+                           Style="{StaticResource NoDataLabel}"
                            Text="Канал пуст"
                            TextColor="#979797" />
                 </StackLayout>

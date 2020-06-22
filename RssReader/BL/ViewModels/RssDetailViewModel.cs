@@ -135,6 +135,7 @@ namespace RssReader.BL.ViewModels
                 RssItems.Clear();
 
                 var list = SQLiteService.GetRssItems(channelModel.Id);
+
                 foreach (var item in list)
                 {
                     item.ChannelId = channelModel.Id;

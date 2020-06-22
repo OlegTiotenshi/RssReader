@@ -9,9 +9,9 @@
                  Spacing="0"
                  VerticalOptions="FillAndExpand">
         <customLayout:NavigationBarGrid>
-            <Label Style="{StaticResource NavigationTitle}"
-                   Grid.Column="1"
+            <Label Grid.Column="1"
                    HorizontalTextAlignment="Center"
+                   Style="{StaticResource NavigationTitle}"
                    Text="Каналы"
                    VerticalTextAlignment="Center" />
 
@@ -35,8 +35,8 @@
             <statecontainer:StateCondition State="NoData">
                 <StackLayout Margin="0,23,0,0"
                              VerticalOptions="FillAndExpand">
-                    <Label Style="{StaticResource NoDataLabel}"
-                           HorizontalOptions="Center"
+                    <Label HorizontalOptions="Center"
+                           Style="{StaticResource NoDataLabel}"
                            Text="Вы не добавили ни один канал"
                            TextColor="#979797" />
                 </StackLayout>

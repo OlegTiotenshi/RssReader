@@ -28,6 +28,7 @@ namespace RssReader.Droid
             UserDialogs.Init(() => CrossCurrentActivity.Current.Activity);
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
 
             string dbName = "Rss_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);

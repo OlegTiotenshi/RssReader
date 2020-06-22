@@ -23,6 +23,8 @@
     {
         RssList,
         RssDetail,
-        NoInternet
+        NoInternet,
+        OneButton,
+        MapsPins
     }
 }

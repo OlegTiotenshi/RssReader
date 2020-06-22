@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\MockData.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MockData.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="refit" Version="5.1.67" />
+  </ItemGroup>
+
+</Project>
