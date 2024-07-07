@@ -4,7 +4,6 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Plugin.CurrentActivity;
 using System.IO;
 
 namespace RssReader.Droid
@@ -21,11 +20,11 @@ namespace RssReader.Droid
 
             base.OnCreate(savedInstanceState);
 
-            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            Rg.Plugins.Popup.Popup.Init(this);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
-            UserDialogs.Init(() => CrossCurrentActivity.Current.Activity);
+            UserDialogs.Init(() => Xamarin.Essentials.Platform.CurrentActivity);
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
