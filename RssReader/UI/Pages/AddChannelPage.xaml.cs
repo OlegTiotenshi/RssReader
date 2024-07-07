@@ -20,7 +20,7 @@ namespace RssReader.UI.Pages
 
             titleLabel.Text = channel != null ? "Редактирование" : "Добавить канал";
             viewModel.IsEditing = channel != null;
-            viewModel.Channel = channel != null ? channel : new ChannelModel();
+            viewModel.Channel = channel ?? new ChannelModel();
         }
     }
 }

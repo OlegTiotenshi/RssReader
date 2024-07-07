@@ -1,6 +1,6 @@
 ﻿namespace RssReader
 {
-    public static class Consts
+    public static class Constants
     {
         public const string NavigationPushMessage = @"NavigationPushMessage";
         public const string NavigationPopMessage = @"NavigationPopMessage";

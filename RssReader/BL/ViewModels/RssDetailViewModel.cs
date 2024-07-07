@@ -52,7 +52,7 @@ namespace RssReader.BL.ViewModels
         {
             RssItems = new ObservableCollection<RssItemModel>();
 
-            MessagingCenter.Subscribe<MessageBus, ChannelModel>(this, Consts.ChannelEdited, async (obj, data) =>
+            MessagingCenter.Subscribe<MessageBus, ChannelModel>(this, Constants.ChannelEdited, async (obj, data) =>
             {
                 ChannelTitle = data.Title;
                 channelModel = data;
@@ -65,7 +65,7 @@ namespace RssReader.BL.ViewModels
         }
         ~RssDetailViewModel()
         {
-            MessagingCenter.Unsubscribe<MessageBus, ChannelModel>(this, Consts.ChannelEdited);
+            MessagingCenter.Unsubscribe<MessageBus, ChannelModel>(this, Constants.ChannelEdited);
         }
 
         public override void OnSetNavigationParams(Dictionary<string, object> navigationParams)

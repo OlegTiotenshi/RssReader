@@ -9,14 +9,16 @@ namespace RssReader
     {
         public App()
         {
+            //Fix ios crash
+            //Current.MainPage = new ContentPage();
+
             InitializeComponent();
 
             DialogService.Init(this);
-
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
-            
             NavigationService.Init(Pages.RssList);
         }
+
         public App(string databaseLocation) : this()
         {
             SQLiteService.Init(databaseLocation);

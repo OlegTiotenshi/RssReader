@@ -41,14 +41,14 @@ namespace RssReader.BL.ViewModels
         public RssListViewModel()
         {
             Channels = new ObservableCollection<ChannelModel>();
-            MessagingCenter.Subscribe<MessageBus>(this, Consts.UpdateChannels, async (obj) =>
+            MessagingCenter.Subscribe<MessageBus>(this, Constants.UpdateChannels, async (obj) =>
             {
                 await LoadData();
             });
         }
         ~RssListViewModel()
         {
-            MessagingCenter.Unsubscribe<MessageBus>(this, Consts.UpdateChannels);
+            MessagingCenter.Unsubscribe<MessageBus>(this, Constants.UpdateChannels);
         }
 
         protected override async Task LoadDataAsync()

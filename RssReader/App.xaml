@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <!--  Fonts  -->
+            <!--#region Fonts-->
             <OnPlatform x:Key="Bold"
                         x:TypeArguments="x:String">
                 <On Platform="Android"
@@ -33,8 +33,9 @@
                 <On Platform="iOS"
                     Value="Montserrat-Medium" />
             </OnPlatform>
+            <!--#endregion-->
 
-            <!--  Color  -->
+            <!--#region Colors-->
             <Color x:Key="black">#252525</Color>
             <Color x:Key="brownGrey">#979797</Color>
             <Color x:Key="greyishBrown">#3e3e3e</Color>
@@ -42,8 +43,9 @@
             <Color x:Key="tomato">#e84747</Color>
             <Color x:Key="grey">#333333</Color>
             <Color x:Key="white">#ffffff</Color>
+            <!--#endregion-->
 
-            <!--  Base Styles  -->
+            <!--#region Base Styles-->
             <Style TargetType="Frame">
                 <Setter Property="HasShadow" Value="False" />
                 <Setter Property="Padding" Value="0" />
@@ -59,7 +61,6 @@
                 <Setter Property="VerticalScrollBarVisibility" Value="Never" />
             </Style>
             <Style TargetType="Button">
-                <!--<Setter Property="Padding" Value="13,15" />-->
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="CornerRadius" Value="22" />
                 <Setter Property="HeightRequest" Value="48" />
@@ -79,8 +80,9 @@
                 <Setter Property="ReturnType" Value="Done" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource brownGrey}" />
             </Style>
+            <!--#endregion-->
 
-            <!--  Styles  -->
+            <!--#region Styles-->
             <Style x:Key="SeparatorLine"
                    TargetType="BoxView">
                 <Setter Property="BackgroundColor" Value="{StaticResource white}" />
@@ -110,7 +112,7 @@
                 <Setter Property="BorderColor" Value="{StaticResource brownGrey}" />
                 <Setter Property="BackgroundColor" Value="White" />
             </Style>
-
+            <!--#endregion-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

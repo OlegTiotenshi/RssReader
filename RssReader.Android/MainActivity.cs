@@ -4,7 +4,6 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Plugin.CurrentActivity;
 using System.IO;
 
 namespace RssReader.Droid
@@ -21,13 +20,11 @@ namespace RssReader.Droid
 
             base.OnCreate(savedInstanceState);
 
-            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
-
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-
-            UserDialogs.Init(() => CrossCurrentActivity.Current.Activity);
+            UserDialogs.Init(this);
+            Rg.Plugins.Popup.Popup.Init(this);
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
             string dbName = "Rss_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
@@ -35,10 +32,9 @@ namespace RssReader.Droid
 
             LoadApplication(new App(fullPath));
         }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
