@@ -1,4 +1,4 @@
-# RssReader
+# RssReader (Xamarin.Forms)
 Данное приложение было моим тестовым заданием в 2020 году. Состоит из двух экранов: список RSS-лент и список сообщений конкретной RSS-ленты.
 This application was my test assignment in 2020. It consists of two screens: a list of RSS feeds and a list of messages from a specific RSS feed.
 
