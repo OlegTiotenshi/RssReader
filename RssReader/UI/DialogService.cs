@@ -12,16 +12,16 @@ namespace RssReader.UI
 
         public DialogService()
         {
-            MessagingCenter.Subscribe<MessageBus, DialogAlertInfo>(this, Consts.DialogAlertMessage, DialogAlertCallback);
-            MessagingCenter.Subscribe<MessageBus, DialogSheetInfo>(this, Consts.DialogSheetMessage, DialogSheetCallback);
-            MessagingCenter.Subscribe<MessageBus, DialogQuestionInfo>(this, Consts.DialogQuestionMessage, DialogQuestionCallback);
-            MessagingCenter.Subscribe<MessageBus, DialogEntryInfo>(this, Consts.DialogEntryMessage, DialogEntryCallback);
+            MessagingCenter.Subscribe<MessageBus, DialogAlertInfo>(this, Constants.DialogAlertMessage, DialogAlertCallback);
+            MessagingCenter.Subscribe<MessageBus, DialogSheetInfo>(this, Constants.DialogSheetMessage, DialogSheetCallback);
+            MessagingCenter.Subscribe<MessageBus, DialogQuestionInfo>(this, Constants.DialogQuestionMessage, DialogQuestionCallback);
+            MessagingCenter.Subscribe<MessageBus, DialogEntryInfo>(this, Constants.DialogEntryMessage, DialogEntryCallback);
 
-            MessagingCenter.Subscribe<MessageBus, string>(this, Consts.DialogShowLoadingMessage, DialogShowLoadingCallback);
+            MessagingCenter.Subscribe<MessageBus, string>(this, Constants.DialogShowLoadingMessage, DialogShowLoadingCallback);
 
-            MessagingCenter.Subscribe<MessageBus>(this, Consts.DialogHideLoadingMessage, DialogHideLoadingCallback);
+            MessagingCenter.Subscribe<MessageBus>(this, Constants.DialogHideLoadingMessage, DialogHideLoadingCallback);
 
-            MessagingCenter.Subscribe<MessageBus, DialogToastInfo>(this, Consts.DialogToastMessage, DialogToastCallback);
+            MessagingCenter.Subscribe<MessageBus, DialogToastInfo>(this, Constants.DialogToastMessage, DialogToastCallback);
         }
 
         public static void Init(Application app)

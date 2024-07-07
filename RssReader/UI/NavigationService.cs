@@ -23,8 +23,8 @@ namespace RssReader.UI
         {
             _pageTypes = GetAssemblyPageTypes();
             _viewModelTypes = GetAssemblyViewModelTypes();
-            MessagingCenter.Subscribe<MessageBus, NavigationPushInfo>(this, Consts.NavigationPushMessage, NavigationPushCallback);
-            MessagingCenter.Subscribe<MessageBus, NavigationPopInfo>(this, Consts.NavigationPopMessage, NavigationPopCallback);
+            MessagingCenter.Subscribe<MessageBus, NavigationPushInfo>(this, Constants.NavigationPushMessage, NavigationPushCallback);
+            MessagingCenter.Subscribe<MessageBus, NavigationPopInfo>(this, Constants.NavigationPopMessage, NavigationPopCallback);
         }
 
         public static void Init(RssReader.Pages page)
@@ -307,11 +307,10 @@ namespace RssReader.UI
 
                 await PopupNavigation.Instance.PushAsync(new NoInternetPage());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
             }
-            
+
         }
 
         public static void CloseNoInternetPage()
@@ -325,7 +324,6 @@ namespace RssReader.UI
             }
             catch (Exception ex)
             {
-
             }
         }
     }

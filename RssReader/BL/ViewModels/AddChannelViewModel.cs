@@ -27,9 +27,9 @@ namespace RssReader.BL.ViewModels
             if(result)
             {
                 if (IsEditing)
-                    MessageBus.SendMessage(Consts.ChannelEdited, Channel);
+                    MessageBus.SendMessage(Constants.ChannelEdited, Channel);
 
-                MessageBus.SendMessage(Consts.UpdateChannels);
+                MessageBus.SendMessage(Constants.UpdateChannels);
 
                 CloseCommand.Execute(null);
             }

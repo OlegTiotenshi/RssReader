@@ -108,10 +108,10 @@ namespace RssReader.BL.ViewModels
             bool withAnimation = true,
             bool withBackButton = false)
         {
-            MessageBus.SendMessage(Consts.DialogHideLoadingMessage);
+            MessageBus.SendMessage(Constants.DialogHideLoadingMessage);
 
             var completedTask = new TaskCompletionSource<bool>();
-            MessageBus.SendMessage(Consts.NavigationPushMessage,
+            MessageBus.SendMessage(Constants.NavigationPushMessage,
                 new NavigationPushInfo
                 {
                     To = toName.ToString(),
@@ -149,7 +149,7 @@ namespace RssReader.BL.ViewModels
         {
             ClearDialogs();
             var taskCompletionSource = new TaskCompletionSource<bool>();
-            MessageBus.SendMessage(Consts.NavigationPopMessage, new NavigationPopInfo
+            MessageBus.SendMessage(Constants.NavigationPopMessage, new NavigationPopInfo
             {
                 Mode = mode,
                 OnCompletedTask = taskCompletionSource
@@ -174,18 +174,18 @@ namespace RssReader.BL.ViewModels
 
         protected void ShowLoading(string message = null, bool useDelay = true)
         {
-            MessageBus.SendMessage(Consts.DialogShowLoadingMessage, message);
+            MessageBus.SendMessage(Constants.DialogShowLoadingMessage, message);
         }
 
         protected void HideLoading()
         {
-            MessageBus.SendMessage(Consts.DialogHideLoadingMessage);
+            MessageBus.SendMessage(Constants.DialogHideLoadingMessage);
         }
 
         protected static Task ShowAlert(string title, string message, string cancel)
         {
             var tcs = new TaskCompletionSource<bool>();
-            MessageBus.SendMessage(Consts.DialogAlertMessage,
+            MessageBus.SendMessage(Constants.DialogAlertMessage,
                 new DialogAlertInfo
                 {
                     Title = title,
@@ -199,7 +199,7 @@ namespace RssReader.BL.ViewModels
         protected static Task<string> ShowSheet(string title, string cancel, string destruction, string[] items)
         {
             var tcs = new TaskCompletionSource<string>();
-            MessageBus.SendMessage(Consts.DialogSheetMessage,
+            MessageBus.SendMessage(Constants.DialogSheetMessage,
                 new DialogSheetInfo
                 {
                     Title = title,
@@ -214,7 +214,7 @@ namespace RssReader.BL.ViewModels
         protected static Task<bool> ShowQuestion(string title, string question, string positive, string negative)
         {
             var tcs = new TaskCompletionSource<bool>();
-            MessageBus.SendMessage(Consts.DialogQuestionMessage,
+            MessageBus.SendMessage(Constants.DialogQuestionMessage,
                 new DialogQuestionInfo
                 {
                     Title = title,
@@ -229,7 +229,7 @@ namespace RssReader.BL.ViewModels
         protected static Task<string> ShowEntryAlert(string title, string message, string cancel, string ok, string placeholder)
         {
             var tcs = new TaskCompletionSource<string>();
-            MessageBus.SendMessage(Consts.DialogEntryMessage,
+            MessageBus.SendMessage(Constants.DialogEntryMessage,
                 new DialogEntryInfo
                 {
                     Title = title,
@@ -245,7 +245,7 @@ namespace RssReader.BL.ViewModels
 
         protected static void ShowToast(string text, bool isLongTime = false, bool isCenter = false)
         {
-            MessageBus.SendMessage(Consts.DialogToastMessage,
+            MessageBus.SendMessage(Constants.DialogToastMessage,
                 new DialogToastInfo
                 {
                     Text = text,

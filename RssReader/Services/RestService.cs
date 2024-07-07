@@ -19,7 +19,7 @@ namespace RssReader.Services
 
                 return resString;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
